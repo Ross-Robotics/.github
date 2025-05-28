@@ -1,7 +1,7 @@
 name: 🐲 Electronics Incident Reporting
 description: Create a report to capture details to help RCA
 title: "[Electronics Incident Reporting]"
-labels: ["Electronics Incident Reporting"]
+assignees: BartGarciaNathan
 body:
   - type: markdown
     attributes:
