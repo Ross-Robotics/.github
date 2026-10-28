@@ -1,76 +1,65 @@
-name: 🐛 Bug report
-description: Create a report to help us improve
+name: Bug report
+description: Report a defect in the software or firmware.
 title: "[Bug] "
-labels: ["bug-report"]
+labels: ["bug"]
 body:
   - type: textarea
+    id: description
     attributes:
-      label: Describe the bug
-      description: A clear and concise description of the bug.
+      label: Description
+      description: Describe the bug, including what happened and what was expected to happen. Screenshots and videos can be attached here.
     validations:
       required: true
 
   - type: textarea
+    id: reproduce
     attributes:
-      label: To Reproduce
-      description: |
-          Steps to reproduce the behavior.
-          1. Robot on base station '...'
-          2. Starting inspection '....' (attach inspection file if needed)
-          3. See error
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Expected behavior
-      description: A clear and concise description of what you expected to happen.
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Screenshot / Media
-      description: Add screenshot / media if you have them
-
-  - type: textarea
-    attributes:
-      label: Robot Logs
-      description: |
-          Provided the needed docker/system logs if they are relevant to the issue
-          - Check the log for relevant information: `docker logs containername -t --tail N` (use N with the number of lines you want to see)
-          - Get the docker logs and attach them below: `docker inspect --format='{{.LogPath}}' containername` to get the filepath 
-          - Paste the relevant link below
+      label: Steps to Reproduce
+      description: The steps required to reproduce the bug. If it cannot be reproduced, state "Not reproducible".
       placeholder: |
-          # PASTE HERE LOGS
-    validations:
-      required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Setup
-
-  - type: textarea
-    attributes:
-      label: Software Version
-      description: |
-          Which version of the stack are you using?
-      placeholder: |
-          # Paste versions for all the relevant components here (ccu, ocu, ...)
-    validations:
-      required: false
+        1. Robot on base station '...'
+        2. Start inspection '...'
+        3. Observe the error
 
   - type: dropdown
+    id: impact
     attributes:
-      label: Robot model
+      label: Impact
       options:
-        - 4.1
-        - 4.1.1
-        - 4.1.2
-        - 4.2
+        - Safety issue
+        - Robot stops working or requires manual intervention
+        - Functionality incorrect or degraded
+        - Minor or cosmetic issue
+        - Potential issue (identified but not yet observed)
+    validations:
+      required: true
 
   - type: textarea
+    id: version
     attributes:
-      label: Additional context
-      description: Add any other context about the problem here.
+      label: Software Version
+      description: The version of each relevant component, as a release tag, branch or commit hash.
+      placeholder: |
+        ccu: v1.4.2
+        ocu: v1.4.2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: robot-model
+    attributes:
+      label: Robot Model
+      multiple: true
+      options:
+        - "4.1"
+        - "4.1.1"
+        - "4.1.2"
+        - "4.2"
+        - Not applicable
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Robot Logs
+      description: Paste any relevant log output, e.g. from `docker logs <container_name> -t --tail <N>`.
+      render: shell

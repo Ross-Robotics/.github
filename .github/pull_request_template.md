@@ -1,49 +1,75 @@
-<!--- Provide a general summary of your changes in the Title above -->
+<!--
+Provide a concise summary of the change in the PR title.
+Apply one label to this PR: bug, enhancement, breaking change, maintenance or documentation.
+-->
 
-## Basic Info
+## Related Issues
 
-| Info | Please fill out this column |
-| ------ | ----------- |
-| Issue(s) this addresses   | (add issues here #1) |
-| Robotic platform tested on | (4.1, 4.2, ...) |
+<!--
+List the issue(s) this PR addresses. Use "Closes #<number>" to close an issue automatically when this PR is merged.
+
+Example:
+- Closes #123
+-->
+
+
+## Accompanying PRs
+
+<!--
+List any PRs, in this or other repositories, that must be merged alongside this one, or state "None".
+
+Example:
+- Ross-Robotics/mk4_firmware#45 (adds the firmware support this change depends on)
+-->
 
 
 ## Description
-<!--- Describe your changes in detail -->
-
-
-## How has this been tested?
-<!--- Please describe in detail how you tested your changes. -->
-<!--- Include details of your testing environment, tests ran to see how -->
-<!--- your change affects other areas of the code, etc. -->
-
-## Types of changes
-<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-
-
-## Description of contribution in a few bullet points
 
 <!--
-* I added this neat new feature
-* Also fixed a typo in a parameter name in mk4_behavior_trees
+Describe what this change does and why it is required. Bullet points are acceptable.
+
+Example:
+- Added X to Y to ensure that ...
+- Corrected a parameter name in mk4_behavior_trees.
 -->
 
 
-## Future work that may be required in bullet points
+## Testing
 
 <!--
-* I think there might be some optimizations to be made from STL vector
-* I see alot of redundancy in this package, we might want to add a function `bool XYZ()` to reduce clutter
+Describe how this change has been tested, including:
+- the robotic platform(s) tested on (e.g. 4.1, 4.2)
+- the test environment
+- the tests performed, including any checks for effects on other areas of the code
 -->
 
-#### Pre-Submit Checklist:
-<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
-- [ ] My code follows the code style of this project and has been linted.
-- [ ] I have tested the code on all the affected platforms.
-- [ ] My change requires a change to the documentation.
-- [ ] I have updated the documentation accordingly.
-- [ ] My change requires a change to `mk4_bringup`.
-- [ ] I have updated `mk4_bringup` accordingly.
+
+## Feature Documentation
+
+<!--
+Required for enhancements; otherwise state "None".
+Describe the new feature for its users: what it does, how to use or configure it, and any limitations.
+This text is used in the release PR description and may later be transferred to user guides.
+-->
+
+
+## Known Limitations
+
+<!--
+List any cases this change does not handle, or conditions under which it may not behave as expected.
+
+Example:
+- Applies to the front TOF sensors only; the rear sensors are unchanged.
+- Not yet tested on platform 4.1.
+-->
+
+
+## Future Work
+
+<!--
+List any follow-up work identified as a result of this change.
+
+Example:
+- Investigate potential optimisations in the use of std::vector.
+- Reduce duplication in this package by introducing a shared helper function, e.g. `bool XYZ()`.
+-->

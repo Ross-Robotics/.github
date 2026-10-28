@@ -1,0 +1,21 @@
+name: Task
+description: Propose refactoring, technical debt, CI, build or dependency work.
+title: "[Task] "
+labels: ["maintenance"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the work required and why it is needed. Reference any related issues or PRs, e.g. a PR whose Future Work section raised this task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of Done
+      description: The conditions that must be met for this task to be considered complete.
+      placeholder: |
+        - ...
+        - ...
